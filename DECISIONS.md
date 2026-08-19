@@ -6,23 +6,24 @@
 
 ---
 
-## 1. Track Selection: Why Track 2 & The SIYAH Brand Context
+## 1. Track Selection: Why Track 2 & My Real-Life Inspiration for SIYAH
 
-When I reviewed the prompt options, I chose **Track 2 (Premium Home Page)** over Track 1 because it offered a direct opportunity to demonstrate high-craft UI development, animation design, performance optimization, and authentic brand storytelling.
+When reviewing the assessment options under tight time constraints, I strategically chose **Track 2 (Premium Home Page)** over Track 1 so I could focus 100% of my effort on delivering maximum UI craft, visual polish, and performance within the available deadline.
 
-Rather than building a generic SaaS template with filler copy, I chose to build for **SIYAH** — an authentic Indian ethnic fashion brand with a rich, unique origin story:
-- **Himachal Pradesh Roots**: SIYAH was grown in the mountains of Himachal Pradesh, leaning into Pahadi weaving heritage and mountain craftsmanship.
-- **Physical Retail Footprint**: The brand established its first 10 offline retail stores across Himachal before launching online.
-- **Shark Tank India Deal**: SIYAH appeared on Shark Tank India and successfully secured a national investment deal.
-- **Core Value Proposition**: *"Ethnic wear, minus the boring price tag."*
+My decision to build specifically for **SIYAH** came from a real-world experience:
+> *I recently discovered SIYAH on social media after hearing about their Shark Tank India deal and Himachal retail roots. However, when I tried visiting their official website that day, the website was down and not working. When this assessment was assigned, I immediately knew what I wanted to build: a high-performing, reliable, and beautiful landing page for SIYAH that does complete justice to their brand story.*
 
-Building for SIYAH allowed me to create a page that feels real, warm, and distinctly Indian, while solving real positioning challenges around luxury aesthetics vs accessible pricing.
+### Key Brand Context Reflected in the Code:
+- 🏔️ **Grown in Himachal Pradesh**: Pahadi weaving heritage and mountain roots.
+- 🏬 **First 10 Physical Outlets**: Grounded in their initial 10 offline retail stores across Himachal before expanding online nationwide.
+- 🦈 **Shark Tank India Investment**: Highlighting their national television feature and successful investment deal.
+- 💡 **Core Value Proposition**: *"Ethnic wear, minus the boring price tag."*
 
 ---
 
 ## 2. Key Technical & Design Decisions (and Trade-Offs Made)
 
-### Decision A: Lightweight Swaying SVG Pallu over 3D Canvas
+### Decision A: Lightweight Swaying SVG Pallu over Heavy 3D Canvas
 - **What I did**: I created a dual-layer SVG ribbon background (`#svgRibbon1`, `#svgRibbon2`) with CSS keyframe animation (`swayRibbon1`, `swayRibbon2`) and gold zari dotted borders to simulate a fluttering saree pallu.
 - **Trade-off**: A 3D WebGL cloth simulation (Three.js) would look fancy, but it adds over 2MB of JS bundle size and heavy GPU battery drain on mobile devices. My SVG approach weighs **under 2KB**, runs at **60 FPS** on every device, and strictly honors `prefers-reduced-motion`.
 
