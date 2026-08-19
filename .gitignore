@@ -1,0 +1,6 @@
+.system_generated/
+.tempmediaStorage/
+.user_uploaded/
+scratch/
+implementation_plan.md*
+*.json

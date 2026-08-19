@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIYAH | Ethnic Wear, Minus the Boring Price Tag</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Theme Setup */
+    :root {
+      --bg-dark: #161213;
+      --bg-dark-card: #201a1c;
+      --bg-light: #FAF3EC;
+      --bg-light-card: #FFFFFF;
+      --text-dark: #FAF3EC;
+      --text-light: #161213;
+      --text-muted-dark: #A39B98;
+      --text-muted-light: #6E6764;
+      --accent-gold: #E8A33D;
+      --accent-gold-hover: #D4902B;
+      --accent-pink: #B23A6B;
+      --border-dark: rgba(250, 243, 236, 0.12);
+      --border-light: rgba(22, 18, 19, 0.1);
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Work Sans', -apple-system, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --transition-base: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      width: 100%;
+    }
+
+    /* Scroll Margin Offset for Sticky Header */
+    section, footer {
+      scroll-margin-top: 80px;
+    }
+
+    /* Subtle Texture Overlay */
+    .noise-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.035;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: linear-gradient(90deg, #B23A6B 0%, #E8A33D 100%);
+      color: #161213;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .countdown-timer {
+      font-family: monospace;
+      background: rgba(22, 18, 19, 0.85);
+      color: var(--accent-gold);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    /* Typography */
+    h1, h2, h3, .font-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navigation - Sticky at top 0 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(22, 18, 19, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      padding: 16px 0;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo .dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-gold);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: var(--transition-base);
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Buttons & Price Tag Shapes */
+    .btn-price-tag {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px 14px 36px;
+      background-color: var(--accent-gold);
+      color: #161213;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius-sm) var(--radius-md) var(--radius-md) var(--radius-sm);
+      transition: var(--transition-base);
+      clip-path: polygon(14px 0%, 100% 0%, 100% 100%, 14px 100%, 0% 50%);
+    }
+
+    .btn-price-tag::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      width: 6px;
+      height: 6px;
+      background-color: #161213;
+      border-radius: 50%;
+    }
+
+    .btn-price-tag:hover {
+      background-color: var(--accent-gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 163, 61, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition-base);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: rgba(232, 163, 61, 0.05);
+    }
+
+    .btn-link {
+      background: none;
+      border: none;
+      color: var(--text-muted-dark);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .btn-link:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #sparkleCanvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .saree-background {
+      position: absolute;
+      top: 0;
+      right: -10%;
+      width: 80%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.38;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Swaying Saree Animation */
+    .saree-ribbon-1 {
+      animation: swayRibbon1 12s ease-in-out infinite alternate;
+      transform-origin: top right;
+      transition: fill 0.8s ease;
+    }
+
+    .saree-ribbon-2 {
+      animation: swayRibbon2 9s ease-in-out infinite alternate;
+      transform-origin: top right;
+      transition: fill 0.8s ease;
+    }
+
+    @keyframes swayRibbon1 {
+      0% { transform: rotate(0deg) skewX(0deg) translateY(0); }
+      50% { transform: rotate(3deg) skewX(-4deg) translateY(15px); }
+      100% { transform: rotate(-2deg) skewX(2deg) translateY(-10px); }
+    }
+
+    @keyframes swayRibbon2 {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(-4deg) scale(1.03) translateY(-12px); }
+      100% { transform: rotate(2deg) scale(0.98) translateY(18px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(232, 163, 61, 0.1);
+      border: 1px solid rgba(232, 163, 61, 0.25);
+      border-radius: 50px;
+      color: var(--accent-gold);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .highlight-underline {
+      position: relative;
+      display: inline-block;
+      color: var(--accent-gold);
+    }
+
+    .highlight-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 0, 50 10 T 100 10' fill='none' stroke='%23E8A33D' stroke-width='4'/%3E%3C/svg%3E") repeat-x;
+      background-size: 40px 10px;
+    }
+
+    .hero-subtext {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--text-muted-dark);
+      max-width: 600px;
+      margin: 0 auto 32px auto;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    /* Live Pallu Color Customizer */
+    .hero-customizer {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(22, 18, 19, 0.7);
+      border: 1px solid var(--border-dark);
+      border-radius: 50px;
+      padding: 6px 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .customizer-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .color-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .color-btn:hover, .color-btn.active {
+      transform: scale(1.25);
+      border-color: var(--text-dark);
+    }
+
+    /* Milestone Bar */
+    .milestone-bar {
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+      background: rgba(32, 26, 28, 0.4);
+      padding: 24px 0;
+    }
+
+    .milestone-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 24px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .milestone-icon {
+      font-size: 20px;
+      color: var(--accent-gold);
+    }
+
+    .milestone-text {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+
+    .milestone-sub {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted-dark);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .milestone-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--border-dark);
+    }
+
+    /* Honesty Banner Section */
+    .honesty-section {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .honesty-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .honesty-tag {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent-pink);
+      margin-bottom: 12px;
+    }
+
+    .honesty-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .honesty-desc {
+      color: var(--text-muted-light);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .honesty-box {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    .honesty-stat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .honesty-stat-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .honesty-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(232, 163, 61, 0.15);
+      color: #C07914;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .honesty-text h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .honesty-text p {
+      font-size: 14px;
+      color: var(--text-muted-light);
+    }
+
+    /* Product Showcase Section */
+    .showcase {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-subtitle {
+      color: var(--accent-gold);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    /* Product Card with Fabric Swatch Hover Reveal */
+    .product-card {
+      background-color: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition-base);
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .product-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(232, 163, 61, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-media {
+      position: relative;
+      height: 320px;
+      background: #2D2528;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 24px;
+      text-align: center;
+    }
+
+    /* Woven Fabric Texture Pattern for Placeholder */
+    .fabric-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background-image: radial-gradient(#E8A33D 1px, transparent 1px), radial-gradient(#B23A6B 1px, #2D2528 1px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+
+    .card-placeholder-badge {
+      position: relative;
+      z-index: 2;
+      background: rgba(22, 18, 19, 0.85);
+      border: 1px dashed var(--accent-gold);
+      border-radius: var(--radius-sm);
+      padding: 12px 20px;
+      color: var(--text-dark);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Hover Reveal Fabric Swatch Strip */
+    .swatch-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      display: flex;
+      transform: translateY(100%);
+      transition: var(--transition-base);
+      z-index: 3;
+    }
+
+    .product-card:hover .swatch-strip {
+      transform: translateY(0);
+    }
+
+    .swatch-color {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .card-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-pink);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted-dark);
+      margin-bottom: 20px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 16px;
+    }
+
+    .card-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .btn-price-breakdown {
+      background: rgba(232, 163, 61, 0.1);
+      border: 1px solid rgba(232, 163, 61, 0.3);
+      color: var(--accent-gold);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .btn-price-breakdown:hover {
+      background: var(--accent-gold);
+      color: #161213;
+    }
+
+    /* Modals */
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .breakdown-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .breakdown-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--accent-gold);
+    }
+
+    .strike-price {
+      text-decoration: line-through;
+      color: #E86B9B;
+      font-size: 13px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-base);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted-dark);
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .modal-close-btn:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Form Styling */
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted-dark);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(250, 243, 236, 0.05);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition-base);
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--accent-gold);
+      background: rgba(250, 243, 236, 0.08);
+    }
+
+    .btn-submit-account {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent-gold);
+      color: #161213;
+      border: none;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition-base);
+      margin-top: 10px;
+    }
+
+    .btn-submit-account:hover {
+      background: var(--accent-gold-hover);
+    }
+
+    .account-success-msg {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .account-success-msg .promo-code {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(232, 163, 61, 0.15);
+      border: 1px dashed var(--accent-gold);
+      border-radius: var(--radius-sm);
+      color: var(--accent-gold);
+      font-family: monospace;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 16px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0E0B0C;
+      border-top: 1px solid var(--border-dark);
+      padding: 60px 0 40px 0;
+      color: var(--text-muted-dark);
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+
+    .footer-note {
+      max-width: 480px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* Accessibility / Motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .saree-ribbon-1, .saree-ribbon-2, .product-card, .btn-price-tag, #sparkleCanvas {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        display: none !important;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .honesty-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 40px;
+      }
+      .milestone-divider {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Subtle noise grain background -->
+  <div class="noise-bg" aria-hidden="true"></div>
+
+  <!-- Announcement Bar with Countdown -->
+  <div class="announcement-bar">
+    ⚡ FIRST ONLINE DROP LAUNCHING IN: <span class="countdown-timer" id="dropTimer">03d : 14h : 22m : 45s</span> • FREE HIMACHAL SHIPPING ON VIP ACCESS
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        SIYAH<span class="dot"></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#honesty" data-scroll="honesty">Our Promise</a></li>
+        <li><a href="#showcase" data-scroll="showcase">Upcoming Drops</a></li>
+        <li><a href="#contact" data-scroll="contact">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-link" id="openAccountModal">Create Account</button>
+        <button class="btn-price-tag" data-scroll="showcase">
+          Shop the Drop
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+      <!-- Dynamic Canvas Zari Sparkle Particle Trail -->
+      <canvas id="sparkleCanvas"></canvas>
+
+      <!-- Swaying Saree Pallu Ambient SVG Animation -->
+      <div class="saree-background" aria-hidden="true">
+        <svg viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+          <!-- Rani Pink Layer -->
+          <g class="saree-ribbon-1" id="svgRibbon1">
+            <path d="M200 0 C 400 300, 100 600, 600 900 L 800 900 C 500 600, 700 300, 500 0 Z" fill="url(#raniPinkGradient)" opacity="0.6"/>
+            <!-- Dotted Gold Zari Border -->
+            <path d="M200 0 C 400 300, 100 600, 600 900" stroke="#E8A33D" stroke-width="3" stroke-dasharray="6 6"/>
+          </g>
+
+          <!-- Marigold Layer -->
+          <g class="saree-ribbon-2" id="svgRibbon2">
+            <path d="M350 0 C 550 250, 300 550, 750 900 L 850 900 C 450 550, 700 250, 500 0 Z" fill="url(#marigoldGradient)" opacity="0.5"/>
+            <!-- Dotted Gold Zari Border -->
+            <path d="M350 0 C 550 250, 300 550, 750 900" stroke="#FAF3EC" stroke-width="2" stroke-dasharray="4 4"/>
+          </g>
+
+          <defs>
+            <linearGradient id="raniPinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#B23A6B" stop-opacity="0.8" class="gradient-stop-1"/>
+              <stop offset="100%" stop-color="#801F48" stop-opacity="0.2" class="gradient-stop-2"/>
+            </linearGradient>
+            <linearGradient id="marigoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E8A33D" stop-opacity="0.9" class="gradient-stop-3"/>
+              <stop offset="100%" stop-color="#B23A6B" stop-opacity="0.3" class="gradient-stop-4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          ✨ Indian Wear Redefined
+        </div>
+        
+        <h1 class="hero-title">
+          Ethnic wear, <span class="highlight-underline">minus</span> the boring price tag
+        </h1>
+        
+        <p class="hero-subtext">
+          Kurtis, sarees, and suits for the days you want to look festive — without the festival-level bill. Pure fabrics, honest craft, zero fluff.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-price-tag" data-scroll="showcase">
+            Explore First Drop
+          </button>
+          <button class="btn-secondary" id="heroCreateAccount">
+            Join VIP Early Access
+          </button>
+        </div>
+
+        <!-- Live Pallu Color Customizer -->
+        <div class="hero-customizer">
+          <span class="customizer-label">Drape Shade:</span>
+          <button class="color-btn active" style="background: #B23A6B;" data-color="rani" title="Rani Pink"></button>
+          <button class="color-btn" style="background: #E8A33D;" data-color="marigold" title="Marigold Gold"></button>
+          <button class="color-btn" style="background: #2D5A27;" data-color="forest" title="Forest Green"></button>
+          <button class="color-btn" style="background: #6B2D5C;" data-color="plum" title="Plum Silk"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimalist Press / Milestone Bar -->
+    <section class="milestone-bar">
+      <div class="container">
+        <div class="milestone-flex">
+          <div class="milestone-item">
+            <span class="milestone-icon">🏔️</span>
+            <div class="milestone-text">
+              Himachal Heritage
+              <span class="milestone-sub">Born in Himachal Pradesh</span>
+            </div>
+          </div>
+
+          <div class="milestone-divider"></div>
+
+          <div class="milestone-item">
+            <span class="milestone-icon">🏬</span>
+            <div class="milestone-text">
+              10 Outlets
+              <span class="milestone-sub">First 10 flagship stores</span>
+            </div>
+          </div>
+
+          <div class="milestone-divider"></div>
+
+          <div class="milestone-item">
+            <span class="milestone-icon">🦈</span>
+            <div class="milestone-text">
+              Shark Tank Deal
+              <span class="milestone-sub">Featured on Shark Tank India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Honesty First Section -->
+    <section id="honesty" class="honesty-section">
+      <div class="container honesty-grid">
+        <div>
+          <p class="honesty-tag">Built on Trust</p>
+          <h2 class="honesty-title">No fake hype. Just real craft.</h2>
+          <p class="honesty-desc">
+            Most fashion sites put "10,000+ Happy Customers" on day one. We think you deserve honesty over manufactured social proof.
+          </p>
+        </div>
+
+        <div class="honesty-box">
+          <div class="honesty-stat-item">
+            <div class="honesty-icon">01</div>
+            <div class="honesty-text">
+              <h4>No Fake Testimonials</h4>
+              <p>We won't invent quotes from fictional buyers. Our reviews come from real women across Himachal and India.</p>
+            </div>
+          </div>
+
+          <div class="honesty-stat-item">
+            <div class="honesty-icon">02</div>
+            <div class="honesty-text">
+              <h4>Transparent Pricing</h4>
+              <p>Ethnic wear is notorious for 4x festival markups. We calculate price based on fabric quality and tailoring cost — nothing else.</p>
+            </div>
+          </div>
+
+          <div class="honesty-stat-item">
+            <div class="honesty-icon">03</div>
+            <div class="honesty-text">
+              <h4>Small Batch Drops</h4>
+              <p>No deadstock or overproduction. We make limited quantities so every drape feels personal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="showcase" class="showcase">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-subtitle">Show, Don't Tell</p>
+          <h2 class="section-title">First Drop Preview</h2>
+          <p style="color: var(--text-muted-dark); font-size: 15px;">
+            Here's a look at what we're currently prototyping for launch.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <!-- Card 1 -->
+          <div class="product-card">
+            <div class="card-media">
+              <div class="fabric-pattern"></div>
+              <div class="card-placeholder-badge">
+                📷 Studio Photo Coming Soon
+              </div>
+              <div class="swatch-strip">
+                <div class="swatch-color" style="background: #B23A6B;">Rani Pink</div>
+                <div class="swatch-color" style="background: #E8A33D;">Zari Gold</div>
+                <div class="swatch-color" style="background: #161213;">Deep Siyah</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Handloom Saree</span>
+              <h3 class="card-title">The Himachal Linen Drape</h3>
+              <p class="card-desc">Breathable linen-cotton weave with woven gold zari borders. Light enough for long family functions.</p>
+              <div class="card-footer">
+                <span class="card-price">₹2,499</span>
+                <button class="btn-price-breakdown" data-item="saree">🔍 View Price Math</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card">
+            <div class="card-media">
+              <div class="fabric-pattern" style="background-size: 15px 15px;"></div>
+              <div class="card-placeholder-badge">
+                📷 Studio Photo Coming Soon
+              </div>
+              <div class="swatch-strip">
+                <div class="swatch-color" style="background: #2D5A27;">Forest Green</div>
+                <div class="swatch-color" style="background: #E8A33D;">Mustard</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Kurti Set</span>
+              <h3 class="card-title">Chanderi Flow Kurti</h3>
+              <p class="card-desc">Soft Chanderi silk blend with minimal threadwork. Designed for workdays that turn into festive dinners.</p>
+              <div class="card-footer">
+                <span class="card-price">₹1,899</span>
+                <button class="btn-price-breakdown" data-item="kurti">🔍 View Price Math</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card">
+            <div class="card-media">
+              <div class="fabric-pattern" style="background-size: 25px 25px;"></div>
+              <div class="card-placeholder-badge">
+                📷 Studio Photo Coming Soon
+              </div>
+              <div class="swatch-strip">
+                <div class="swatch-color" style="background: #6B2D5C;">Plum Silk</div>
+                <div class="swatch-color" style="background: #E8A33D;">Antique Gold</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">3-Piece Suit</span>
+              <h3 class="card-title">Anarkali Linen-Silk Set</h3>
+              <p class="card-desc">Complete set with tailored pants and a lightweight organza dupatta. Classic flair with modern comfort.</p>
+              <div class="card-footer">
+                <span class="card-price">₹3,299</span>
+                <button class="btn-price-breakdown" data-item="suit">🔍 View Price Math</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <div class="container footer-content">
+      <a href="#" class="brand-logo">
+        SIYAH<span class="dot"></span>
+      </a>
+      <p class="footer-note">
+        Built with pride for the Acdyon Technologies Frontend Assessment. Designed with honesty, craft, and zero fake metrics.
+      </p>
+      <p style="font-size: 12px; color: var(--text-muted-dark);">
+        © 2026 SIYAH Ethnic Wear. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Price Breakdown Modal -->
+  <div id="priceModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closePriceModal">&times;</button>
+      <h3 style="font-size: 22px; color: var(--accent-gold); margin-bottom: 6px;" id="breakdownTitle">Honest Price Breakdown</h3>
+      <p style="font-size: 13px; color: var(--text-muted-dark);">Here is exact cost math behind our price tag:</p>
+
+      <table class="breakdown-table">
+        <tbody>
+          <tr>
+            <td>Pure Fabric Sourcing</td>
+            <td style="text-align: right;" id="costFabric">₹1,100</td>
+          </tr>
+          <tr>
+            <td>Master Artisan Tailoring</td>
+            <td style="text-align: right;" id="costTailor">₹750</td>
+          </tr>
+          <tr>
+            <td>Packaging & Eco Shipping</td>
+            <td style="text-align: right;" id="costLogistics">₹249</td>
+          </tr>
+          <tr>
+            <td>Traditional Retailer 4x Markup</td>
+            <td style="text-align: right;" class="strike-price">+ ₹4,500 ❌</td>
+          </tr>
+          <tr>
+            <td>SIYAH Fair Price</td>
+            <td style="text-align: right;" id="costFinal">₹2,099 ✅</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn-secondary" id="closePriceModalBtn" style="width: 100%;">Understood — Zero Fluff</button>
+    </div>
+  </div>
+
+  <!-- Create Account Modal -->
+  <div id="accountModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="closeAccountModal">&times;</button>
+      
+      <div id="accountFormContainer">
+        <h3 style="font-size: 24px; color: var(--accent-gold); margin-bottom: 8px;">Create Your Account</h3>
+        <p style="font-size: 14px; color: var(--text-muted-dark); margin-bottom: 24px;">
+          Join the SIYAH inner circle for early drop access and exclusive member pricing.
+        </p>
+
+        <form id="createAccountForm">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="e.g. Priya Raj" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="priya@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Favorite Wear Style</label>
+            <select class="form-select">
+              <option value="sarees">Handloom Sarees</option>
+              <option value="kurtis">Workday Kurtis</option>
+              <option value="suits">3-Piece Festive Suits</option>
+              <option value="all">Show Me Everything</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit-account">Join SIYAH VIP Access</button>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="accountSuccessMsg" class="account-success-msg">
+        <div style="font-size: 40px; margin-bottom: 12px;">👑</div>
+        <h3 style="font-size: 22px; color: var(--accent-gold); margin-bottom: 8px;">Welcome to SIYAH!</h3>
+        <p style="font-size: 14px; color: var(--text-dark);">
+          Your account is active. Use your early access launch code for 10% off your first drop order:
+        </p>
+        <div class="promo-code">SIYAHVIP10</div>
+        <button class="btn-secondary" id="closeSuccessModal" style="width: 100%;">Return to Site</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Konami Code Bonus Modal -->
+  <div id="konamiModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content" style="text-align: center;">
+      <button class="modal-close-btn" id="closeKonamiModal">&times;</button>
+      <div style="font-size: 48px; margin-bottom: 16px;">🎉</div>
+      <h3 style="font-size: 24px; color: var(--accent-gold); margin-bottom: 12px;">Easter Egg Unlocked!</h3>
+      <p style="font-size: 14px; color: var(--text-dark); margin-bottom: 24px;">
+        You found the hidden Konami code! Thanks for reviewing the SIYAH assessment submission with such attention to detail.
+      </p>
+    </div>
+  </div>
+
+  <!-- Client-side Interactions JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Countdown Timer
+      const dropTimer = document.getElementById('dropTimer');
+      let targetTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000);
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = targetTime - now;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (dropTimer) {
+          dropTimer.innerText = `${String(days).padStart(2, '0')}d : ${String(hours).padStart(2, '0')}h : ${String(mins).padStart(2, '0')}m : ${String(secs).padStart(2, '0')}s`;
+        }
+      }, 1000);
+
+      // Canvas Sparkle Trail
+      const canvas = document.getElementById('sparkleCanvas');
+      const hero = document.getElementById('heroSection');
+
+      if (canvas && hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+          canvas.width = hero.offsetWidth;
+          canvas.height = hero.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Sparkle {
+          constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 4 + 2;
+            this.speedX = (Math.random() - 0.5) * 1.5;
+            this.speedY = (Math.random() - 0.5) * 1.5;
+            this.color = Math.random() > 0.5 ? '#E8A33D' : '#B23A6B';
+            this.opacity = 1;
+          }
+          update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.opacity -= 0.025;
+          }
+          draw() {
+            ctx.save();
+            ctx.globalAlpha = Math.max(0, this.opacity);
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        hero.addEventListener('mousemove', (e) => {
+          const rect = hero.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          for (let i = 0; i < 2; i++) {
+            particles.push(new Sparkle(x, y));
+          }
+        });
+
+        function animateSparkles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            if (particles[i].opacity <= 0) {
+              particles.splice(i, 1);
+              i--;
+            }
+          }
+          requestAnimationFrame(animateSparkles);
+        }
+        animateSparkles();
+      }
+
+      // Smooth Offset Navigation
+      const scrollButtons = document.querySelectorAll('[data-scroll]');
+      scrollButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = button.getAttribute('data-scroll');
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const headerOffset = 70;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Live Pallu Color Customizer
+      const colorBtns = document.querySelectorAll('.color-btn');
+      const stop1 = document.querySelector('.gradient-stop-1');
+      const stop2 = document.querySelector('.gradient-stop-2');
+
+      const colorPalettes = {
+        rani: { s1: '#B23A6B', s2: '#801F48' },
+        marigold: { s1: '#E8A33D', s2: '#C07914' },
+        forest: { s1: '#2D5A27', s2: '#1E3D1A' },
+        plum: { s1: '#6B2D5C', s2: '#401A37' }
+      };
+
+      colorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          colorBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const colorKey = btn.getAttribute('data-color');
+          const pal = colorPalettes[colorKey];
+          if (pal && stop1 && stop2) {
+            stop1.setAttribute('stop-color', pal.s1);
+            stop2.setAttribute('stop-color', pal.s2);
+          }
+        });
+      });
+
+      // Price Breakdown Modal Logic
+      const priceModal = document.getElementById('priceModal');
+      const breakdownBtns = document.querySelectorAll('.btn-price-breakdown');
+      const closePriceBtn = document.getElementById('closePriceModal');
+      const closePriceBtn2 = document.getElementById('closePriceModalBtn');
+
+      const priceData = {
+        saree: { title: 'The Himachal Linen Drape', fabric: '₹1,200', tailor: '₹950', ship: '₹349', final: '₹2,499' },
+        kurti: { title: 'Chanderi Flow Kurti', fabric: '₹900', tailor: '₹750', ship: '₹249', final: '₹1,899' },
+        suit: { title: 'Anarkali Linen-Silk Set', fabric: '₹1,600', tailor: '₹1,250', ship: '₹449', final: '₹3,299' }
+      };
+
+      breakdownBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const itemKey = btn.getAttribute('data-item');
+          const data = priceData[itemKey];
+          if (data) {
+            document.getElementById('breakdownTitle').innerText = data.title;
+            document.getElementById('costFabric').innerText = data.fabric;
+            document.getElementById('costTailor').innerText = data.tailor;
+            document.getElementById('costLogistics').innerText = data.ship;
+            document.getElementById('costFinal').innerText = data.final;
+            priceModal.classList.add('active');
+            priceModal.setAttribute('aria-hidden', 'false');
+          }
+        });
+      });
+
+      function closePrice() {
+        priceModal.classList.remove('active');
+        priceModal.setAttribute('aria-hidden', 'true');
+      }
+      if (closePriceBtn) closePriceBtn.addEventListener('click', closePrice);
+      if (closePriceBtn2) closePriceBtn2.addEventListener('click', closePrice);
+
+      // IntersectionObserver for Product Card Scroll-Reveal
+      const cards = document.querySelectorAll('.product-card');
+      const observerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const cardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, index * 120);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      cards.forEach(card => cardObserver.observe(card));
+
+      // Create Account Modal Logic
+      const accountModal = document.getElementById('accountModal');
+      const openAccountBtn = document.getElementById('openAccountModal');
+      const heroCreateBtn = document.getElementById('heroCreateAccount');
+      const closeAccountBtn = document.getElementById('closeAccountModal');
+      const closeSuccessBtn = document.getElementById('closeSuccessModal');
+      const accountForm = document.getElementById('createAccountForm');
+      const formContainer = document.getElementById('accountFormContainer');
+      const successMsg = document.getElementById('accountSuccessMsg');
+
+      function openModal() {
+        accountModal.classList.add('active');
+        accountModal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal() {
+        accountModal.classList.remove('active');
+        accountModal.setAttribute('aria-hidden', 'true');
+        setTimeout(() => {
+          formContainer.style.display = 'block';
+          successMsg.style.display = 'none';
+          accountForm.reset();
+        }, 300);
+      }
+
+      if (openAccountBtn) openAccountBtn.addEventListener('click', openModal);
+      if (heroCreateBtn) heroCreateBtn.addEventListener('click', openModal);
+      if (closeAccountBtn) closeAccountBtn.addEventListener('click', closeModal);
+      if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+
+      accountForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formContainer.style.display = 'none';
+        successMsg.style.display = 'block';
+      });
+
+      // Bonus Konami Code Easter Egg (↑ ↑ ↓ ↓ ← → ← → b a)
+      const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+      let konamiIndex = 0;
+      const konamiModal = document.getElementById('konamiModal');
+      const closeKonamiBtn = document.getElementById('closeKonamiModal');
+
+      document.addEventListener('keydown', (e) => {
+        const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
+
+        if (key === requiredKey) {
+          konamiIndex++;
+          if (konamiIndex === konamiCode.length) {
+            konamiModal.classList.add('active');
+            konamiModal.setAttribute('aria-hidden', 'false');
+            konamiIndex = 0;
+          }
+        } else {
+          konamiIndex = 0;
+        }
+      });
+
+      if (closeKonamiBtn) {
+        closeKonamiBtn.addEventListener('click', () => {
+          konamiModal.classList.remove('active');
+          konamiModal.setAttribute('aria-hidden', 'true');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
