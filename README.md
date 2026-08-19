@@ -3,7 +3,7 @@
 > **Acdyon Technologies Take-Home Assessment (Track 2: Premium Home Page)**  
 > *Grown in the mountains of Himachal Pradesh. From 10 offline retail stores to a national Shark Tank India deal — bringing pure handloom fabrics, honest pricing, and zero fluff directly to you.*
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-tiiny.site-E8A33D?style=for-the-badge&logo=fastly)](https://pink-christal-57.tiiny.site/)
+[![Live GitHub Pages Demo](https://img.shields.io/badge/Live_GitHub_Pages-priya--raj8.github.io-E8A33D?style=for-the-badge&logo=github)](https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-B23A6B?style=for-the-badge&logo=github)](https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing)
 [![Assessment Track](https://img.shields.io/badge/Assessment-Track_2_Premium_Home_Page-161213?style=for-the-badge)](https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing)
 
@@ -12,6 +12,12 @@
 ## 🌟 Visual Preview
 
 ![SIYAH Desktop Preview](desktop_preview.png)
+
+---
+
+## 🌐 Live GitHub Pages Link
+
+👉 **[https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/](https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/)**
 
 ---
 
