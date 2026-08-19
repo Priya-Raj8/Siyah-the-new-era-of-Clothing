@@ -1,11 +1,18 @@
 # 🏔️ SIYAH — Premium Indian Ethnic Wear Landing Page
 
 > **Acdyon Technologies Take-Home Assessment (Track 2: Premium Home Page)**  
-> *Grown in the mountains of Himachal Pradesh. From 10 offline retail stores to a national Shark Tank India deal — bringing pure handloom fabrics, honest pricing, and zero fluff directly to you.*
+> *A fresh, modern frontend landing page created for SIYAH — an authentic ethnic wear brand born in Himachal Pradesh.*
 
-[![Live GitHub Pages Demo](https://img.shields.io/badge/Live_GitHub_Pages-priya--raj8.github.io-E8A33D?style=for-the-badge&logo=github)](https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-B23A6B?style=for-the-badge&logo=github)](https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing)
-[![Assessment Track](https://img.shields.io/badge/Assessment-Track_2_Premium_Home_Page-161213?style=for-the-badge)](https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing)
+🌐 **Live Website Link**: **[https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/](https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/)**  
+📂 **GitHub Repository**: **[https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing](https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing)**
+
+---
+
+## 👋 Why I Built This
+
+A few days ago, I stumbled upon **SIYAH** on social media after reading about their appearance on *Shark Tank India* and how they grew from 10 retail outlets across Himachal Pradesh. I was curious to check out their collection, but when I tried visiting their official website, it wasn't working. 
+
+When I received this take-home assessment for Acdyon Technologies, I decided to build a landing page specifically for SIYAH. Given the tight time constraints, I chose **Track 2 (Premium Home Page)** so I could dedicate my time to polishing the UI, crafting smooth animations, and creating a shopping experience that feels authentic to Indian ethnic fashion.
 
 ---
 
@@ -15,83 +22,58 @@
 
 ---
 
-## 🌐 Live GitHub Pages Link
+## 💡 What Makes This Unique
 
-👉 **[https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/](https://priya-raj8.github.io/Siyah-the-new-era-of-Clothing/)**
+Instead of relying on heavy third-party libraries, I wanted to keep the codebase clean, fast, and light. Here are a few details I built into the page:
 
----
+1. **Swaying Saree Pallu (Inline SVG Animation)**: 
+   Rather than loading a 2MB+ 3D canvas library, I created a dual-layer SVG ribbon background with CSS keyframe motion and dotted zari borders. It runs smoothly at 60 FPS without draining battery life on mobile.
 
-## 📖 Brand Story & Context
+2. **Live Drape Shade Studio**: 
+   Right below the hero section, visitors can click color dots (*Rani Pink*, *Marigold Gold*, *Forest Green*, *Plum Silk*) to live-morph the background saree ribbons in real-time.
 
-**SIYAH** is an authentic Indian ethnic wear brand (handloom sarees, workday kurtis, 3-piece festive suit sets):
-- 🏔️ **Himachal Roots**: Born and crafted in the mountains of Himachal Pradesh.
-- 🏬 **Physical Retail Outlets**: Started with 10 offline retail flagship stores across Himachal.
-- 🦈 **Shark Tank India Featured**: Featured on Shark Tank India and successfully secured a national investment deal.
-- 💡 **Core Value Proposition**: *"Ethnic wear, minus the boring price tag."*
+3. **Honest Price Math Breakdown Modal**: 
+   Ethnic wear often suffers from 4x festival markups. Clicking "View Price Math" on any product card opens a breakdown showing exact fabric costs, master tailoring costs, and logistics vs traditional retail markups.
 
----
+4. **Gold Zari Sparkle Cursor Trail**: 
+   Moving the mouse over the hero section leaves a subtle trail of gold and rani pink zari sparkles using an HTML5 Canvas particle engine.
 
-## ✨ Key Features & UX Innovations
+5. **Real-time Launch Countdown Ticker**: 
+   A top notification bar with a live countdown timer (`03d : 14h : 22m : 45s`) to build anticipation for the online launch.
 
-### 1. 🎨 Live Drape Shade Studio (Hero Customizer)
-Visitors can click real-time color swatches (*Rani Pink*, *Marigold Gold*, *Forest Green*, *Plum Silk*) in the hero section to live-morph the background fluttering SVG saree pallu gradients in 60 FPS.
-
-### 2. 🔍 Honest Price Math Breakdown Modal
-Clicking **`View Price Math`** on any product card triggers an interactive cost modal demonstrating exact pricing transparency:
-- Pure Fabric Sourcing: `₹1,100`
-- Master Artisan Tailoring: `₹750`
-- Packaging & Eco Shipping: `₹249`
-- Traditional Retailer 4x Markup: `+ ₹4,500 ❌`
-- **SIYAH Fair Price**: **`₹2,099 ✅`**
-
-### 3. ✨ Gold Zari Sparkle Cursor Particle Trail
-An HTML5 Canvas particle engine (`#sparkleCanvas`) generates a subtle, hardware-accelerated trail of shimmering gold and rani pink zari sparkles following cursor movement in the hero section.
-
-### 4. ⚡ Real-Time Launch Countdown Ticker
-A top notification banner featuring an active live countdown timer (`03d : 14h : 22m : 45s`) creating immediate brand hype upon entry.
-
-### 5. 👑 VIP Early Access & Account Modal
-A functional modal form with validation, smooth submission state handling, and 10% promo code reward (`SIYAHVIP10`).
-
-### 6. 🏆 Honesty-First Section
-Strictly **zero fake metrics** ("10,000+ happy buyers"), zero fake countdown timers, and zero fabricated testimonials.
+6. **Honesty-First Promise**: 
+   No fake testimonials or fabricated "10,000+ happy buyers" counts — just real craft, transparent pricing, and limited small-batch drops.
 
 ---
 
-## 📂 Repository Structure
+## 📂 Project Structure
 
 ```
-├── index.html           # Full self-contained landing page (HTML5, CSS3, Vanilla JS)
-├── DECISIONS.md        # 1-Page Engineering & Design Rationale write-up
-├── README.md           # Project documentation & overview
-├── desktop_preview.png  # High-resolution desktop screenshot preview
+├── index.html           # Main landing page (HTML5, CSS3, Vanilla JS)
+├── DECISIONS.md        # My personal design & engineering decisions write-up
+├── README.md           # This project guide & live links
+├── desktop_preview.png  # Desktop screenshot preview
 └── mobile_preview.png   # Mobile responsiveness preview
 ```
 
 ---
 
-## 🛠️ Tech Stack & Implementation Rules
+## 🛠️ How to Run Locally
 
-- **Pure HTML5 / CSS3 / Vanilla JavaScript**: Zero external npm dependencies or heavy frameworks to guarantee sub-second initial load times.
-- **Typography**: `Fraunces` (Serif Display) + `Work Sans` (Sans-Serif Body) via Google Fonts.
-- **Zero Heavy Assets**: All textures and ribbons powered by inline SVG and CSS gradients.
+You don't need any complex installation steps to run this project:
 
----
-
-## 🚀 How to Run Locally
-
-1. Clone or download this repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/Priya-Raj8/Siyah-the-new-era-of-Clothing.git
    ```
-2. Open `index.html` directly in any web browser, or run a local static server:
+2. Open `index.html` directly in your web browser, or serve it locally:
    ```bash
    npx http-server -p 8000
    ```
-3. Open `http://localhost:8000`.
+3. Visit `http://localhost:8000`.
 
 ---
 
-## 📝 Design Decisions
+## 📝 Engineering Decisions
 
-For a line-by-line defense of architectural trade-offs, performance decisions, and AI assistance transparency, please refer to [`DECISIONS.md`](DECISIONS.md).
+For my detailed breakdown on trade-offs, AI usage transparency, and what I would build with a full week, take a look at [`DECISIONS.md`](DECISIONS.md).
